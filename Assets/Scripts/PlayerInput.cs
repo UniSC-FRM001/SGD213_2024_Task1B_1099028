@@ -7,25 +7,24 @@ public class PlayerInput : MonoBehaviour
     private PlayerMovement playerMovement;
     private Shooting shootingScript;
 
-    // Start is called before the first frame update
-    void Start()
+    void Start() // Set references to the other components when the script loads
     {
         playerMovement = GetComponent<PlayerMovement>();
         shootingScript = GetComponent<Shooting>();
     }
 
-    // Update is called once per frame
+    // Each Frame, check if there is a player input and call the appropriate script for that action.
     void Update()
     {
         float HorizontalInput = Input.GetAxis("Horizontal");
        
         if(HorizontalInput != 0.0f)
         {
-            if (playerMovement != null)
+            if (playerMovement != null) // If there is a script for movement, tell it to move the object.
             {
                 playerMovement.HorizontalMovement(HorizontalInput);
             }
-            else
+            else // If there is no script for movement attached to the player character, post in the log.
             {
                 Debug.Log("Attach the PlayerMovement Script.");
             }
@@ -33,11 +32,11 @@ public class PlayerInput : MonoBehaviour
 
         if(Input.GetButton("Fire1"))
         {
-            if (shootingScript != null)
+            if (shootingScript != null) // If there is a script for shooting, tell it to shoot.
             {
                 shootingScript.Shoot();
             }
-            else
+            else // If there is no script for shooting attached to the player character, post in the log.
             {
                 Debug.Log("Attach the Shooting Script.");
             }

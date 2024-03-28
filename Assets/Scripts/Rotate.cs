@@ -6,9 +6,8 @@ public class Rotate : MonoBehaviour
     [SerializeField]
     private float maximumSpinSpeed = 200;
 
-    // Use this for initialization
-    void Start()
+    void Start() // When an object with this script spawns
     {
-        GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-maximumSpinSpeed, maximumSpinSpeed);
+        GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-maximumSpinSpeed, maximumSpinSpeed); // Set the objects rotation to a random value within range.  - for counter-clockwise + for clockwise.
     }
 }

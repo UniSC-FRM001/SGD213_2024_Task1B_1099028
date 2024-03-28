@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour {
         playerRigidBody = GetComponent<Rigidbody2D>(); // Store a reference to the pawn's rigidbody component.
     }
 
-    public void HorizontalMovement(float HorizontalInput)
+    public void HorizontalMovement(float HorizontalInput)  // Push the pawn based on the value of the player's horizontal input ( - is left, + is right)
     {
         Vector2 ForceToAdd = Vector2.right * HorizontalInput * speed * Time.deltaTime;
         playerRigidBody.AddForce(ForceToAdd);

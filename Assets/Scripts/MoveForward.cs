@@ -11,6 +11,7 @@ public class MoveForward : MonoBehaviour {
 
     [SerializeField]
     private float acceleration = 75f;
+
     [SerializeField]
     private float initialVelocity = 2f;
 
@@ -19,8 +20,7 @@ public class MoveForward : MonoBehaviour {
 
     private Rigidbody2D ourRigidbody;
 
-    // Use this for initialization
-    void Start()
+    void Start() // When the object initializes, store a reference to it's rigidbody component and set it's movement speed and direction
     {
         ourRigidbody = GetComponent<Rigidbody2D>();
 
@@ -32,14 +32,13 @@ public class MoveForward : MonoBehaviour {
         {
             ourRigidbody.velocity = Vector2.down * initialVelocity;
         }
-        else
+        else // Display a message in the log if there is no direction selected (though this should never happen as the script sets the direction as down by default)
         {
             Debug.Log("Movement Direction Not Selected.");
         }
     }
 
-    // Update is called once per frame
-    void Update()
+     void Update()
     {
         if (movementDirection == MovementDirection.MovesUp)
         {
@@ -51,7 +50,7 @@ public class MoveForward : MonoBehaviour {
             Vector2 ForceToAdd = Vector2.down * acceleration * Time.deltaTime;
             ourRigidbody.AddForce(ForceToAdd);
         }
-        else
+        else // Display a message in the log if there is no direction selected (though this should never happen as the script sets the direction as down by default)
         {
             Debug.Log("Movement Direction Not Selected.");
         }
