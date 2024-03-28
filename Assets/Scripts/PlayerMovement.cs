@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMovementScript : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour {
     public float speed = 5000f;
     
     private Rigidbody2D playerRigidBody;

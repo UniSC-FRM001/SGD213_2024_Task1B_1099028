@@ -17,7 +17,6 @@ public class SpawnOverTimeScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
         ourRenderer = GetComponent<Renderer>();
 
         // Stop our Spawner from being visible!

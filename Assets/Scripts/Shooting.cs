@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShootingScript : MonoBehaviour
+public class Shooting : MonoBehaviour
 {
 
     [SerializeField]
